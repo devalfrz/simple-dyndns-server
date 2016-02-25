@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Simple Dynamic DNS Server</title>
+  <style>
+body{
+  text-align: center;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin: 0;
+}
+h1{
+  margin-top:0;
+  padding: 20px 5px;
+  color: white;
+  background-color: cornflowerblue;
+}
+a,a:hover,a:visited{
+  color: cornflowerblue;
+}
+table{
+  margin: auto;
+}
+table td{
+  text-align: left;
+}
+#helper{
+  font-size: 0.7em;
+  text-align: left;
+  padding: 10px;
+  margin: 30px auto;
+  max-width: 340px;
+}
+footer{
+  text-align: right;
+  position: fixed;
+  border-top: 1px solid lightgray;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  margin: 10px;
+}
+  </style>
+</head>
+<body>
+  <h1>Test Simple Dynamic DNS Server</h1>
+  <form action="index.php" method="POST"><table border="0">
+    <tr><td><label for="key">Key:</label></td><td><input type="password" name="key" id="key"></td></tr>
+    <tr><td><label for="server">Server:</label></td><td><input type="text" name="server" id ="server"></td></tr>
+    <tr><td><label for="ip">IP:</label></td><td><input type="text" name="ip" id="ip"></td></tr>
+    <tr><td colspan="2" style="text-align: right"><input type="submit" onClick="clearFields()"></td></tr>
+  </table></form>
+  <div id="helper">
+    <h5>Cheat Sheet</h5>
+    <ol>
+      <li>No fields: Returns curren client IP.</li>
+      <li>Key, Server and IP: Saves designated IP to specified server register.</li>
+      <li>Key and Server: Returns last registered IP of specified server.</li>
+      <li>Key: Returns all registered servers and last IP addresses.</li>
+    </ol>
+  </div>
+  <footer><a href="https://github.com/devalfrz/simple-dyndns-server/">github</a></footer>
+  <script>
+function clearFields(){
+  /*
+   * Delete the unused fields.
+   */
+  var elements = ['key','server','ip'];
+  for(i in elements){
+    if(document.getElementById(elements[i]).value==''){
+      document.getElementById(elements[i]).remove();
+    }   
+  }
+}
+  </script>
+</body>
+</html>
