@@ -44,3 +44,8 @@ http://localhost/simple-dyndns-server/test.html
 This is a simple tool that is intended for personal or testing purposes, the only
 way to delete information from the database is to edit the `db.csv` file manually.
 
+# WARNING!!!
+This system doesn't contemplate any encryption whatsoever, so it IT IS NOT SECURE BY
+SIMPLY INSTALLING IT. If you wish to encrypt your communications (recommended) do it
+by configuring the HTTPS Apache2 implementation.
+
